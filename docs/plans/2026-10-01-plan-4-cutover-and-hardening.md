@@ -6,7 +6,9 @@
 
 **Architecture:** No new features. One config change (security headers in `firebase.json`), docs updates, then a staged launch. The new URL isn't shared anywhere yet, so it serves as the test environment: deploy → QA → fix → redeploy. "Launch" means updating LinkedIn, GitHub and the CV to point at it.
 
-**Spec:** `docs/portfolio-revamp.md` (sections 3.5, 3.6, 4.1, 6). **Builds on:** Plans 1 and 2 (merged to `main` at `012f969`). Plan 3 (hero animation) ships later as a normal update.
+**Spec:** `docs/portfolio-revamp.md` (sections 3.5, 3.6, 4.1, 6). **Builds on:** Plans 1 and 2 (merged to `main` at `012f969`).
+
+> **Status (2026-10-02): paused after Task 3.** Tasks 1–3 are done and deployed. Plan 3 (hero animation) runs first. Its Step 0 merges `plan-4-launch` into `main`, and it ends with a deploy. **Resume at Task 4.** The QA pass then covers the new hero too. For Task 5, make any fixes on a new branch `plan-4-qa-fixes` from `main`, and in Task 5 step 4 merge that branch instead of `plan-4-launch`.
 
 ## Global Constraints
 
@@ -253,10 +255,10 @@ git add -A src public firebase.json && git commit -m "fix: address pre-launch QA
 - [ ] **Step 4:** With approval, merge into `main` and push:
 
 ```bash
-git checkout main && git merge --ff-only plan-4-launch && git push origin main plan-4-launch
+git checkout main && git merge --ff-only plan-4-qa-fixes && git push origin main plan-4-qa-fixes
 ```
 
-If there were no findings, skip steps 1–3 and do step 4.
+If there were no findings, skip steps 1–4 (`main` already contains everything after Plan 3).
 
 ---
 
@@ -271,7 +273,7 @@ git checkout main && npm run build && firebase deploy --only hosting
 - [ ] **Step 2 (👤): Point everything at the new URL** `https://jaypatel-dev-f91cb.web.app`:
   - LinkedIn: Contact info → Website, plus the Featured section if it links the old site.
   - GitHub: profile "Website" field, profile README if it has one, and the **About → Website** field of `jayPatel029/jp_portfolio_astro`.
-  - The CV on Google Drive (`1TQmPepx…`): replace the portfolio link in the document. Edit the existing file so the share link stays the same.
+  - The CV on Google Drive (`1FPes37W…`, replaced `1TQmPepx…` on 2026-10-02): replace the portfolio link in the document. Edit the existing file so the share link stays the same.
   - Anywhere else the old URL appears (email signature, job portals).
 - [ ] **Step 3 (👤): Post-launch checks**
   - Refresh LinkedIn's cached link preview with [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/).

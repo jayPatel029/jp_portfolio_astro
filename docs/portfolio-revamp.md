@@ -239,7 +239,7 @@ All content lives in **one typed data file** (`content/profile.ts` or `.json` wi
 
 ## 7. Content Inputs (answered 2026-10-01)
 
-1. **CV**: new link: `https://drive.google.com/file/d/1TQmPepxVTBuhk_NqN-l3z4cDxqezJOUc/view?usp=sharing`. The Drive file must stay shared as "Anyone with the link → Viewer", or recruiters will hit a Google sign-in page.
+1. **CV**: new link (updated 2026-10-02): `https://drive.google.com/file/d/1FPes37W_uQVm1JhnTfYBQP0lj1Au74JE/view?usp=sharing`. The Drive file must stay shared as "Anyone with the link → Viewer", or recruiters will hit a Google sign-in page.
 2. **Project visuals**: pending; you're checking what you have. Until then, each project gets a generated visual instead of a screenshot, drawn in the site's own style: OCR boxes over a mock document, a retrieval result grid, detection boxes over tool silhouettes, a confusion-matrix tile and so on. No placeholder-image services.
 3. **Atomic Loops**: show exactly what the resume says (company name, role, dates, the 7 bullets, the ~6 GB / 10 GB GPU numbers). No screenshots, client names or sample documents. Any invoice/document shown in the hero animation is fictional.
 4. **Links**: keep as they are (including the Drive link for Emotion Recognition).
@@ -256,7 +256,7 @@ All content lives in **one typed data file** (`content/profile.ts` or `.json` wi
 1. **Phase 0 — Safety fixes on the current live site** (small, independent): revert/fix the `firebase.json` caching rules (C1), fix the Formspree header (C2), and add `http` to dependencies (C3). Worth doing even if the redesign takes weeks.
 2. **Plan 1 — Foundation & core sections** ([plan](plans/2026-10-01-plan-1-foundation-and-core-sections.md)): scaffold, design tokens, typed content from the resume, layout, header/nav/theme toggle, and all sections in clean form (Hero, Impact, About, Work, Projects, More work, Contact, Footer, 404), plus base SEO meta and Firebase config.
 3. **Plan 2 — Signature layer** ([plan](plans/2026-10-01-plan-2-signature-layer.md)): detection-box hover/focus motif, generated project visuals, project cluster filter tabs, Formspree contact form, OG share image, sitemap.
-4. **Plan 3 — Hero inference-pipeline animation**: React island; the static hero from Plan 1 is the reduced-motion fallback. (The embedding-space explorer and patch-grid demo are v2.)
+4. **Plan 3 — Hero inference-pipeline animation** ([plan](plans/2026-10-02-plan-3-hero-pipeline.md)): Preact island; the static hero from Plan 1 is the reduced-motion fallback. (The embedding-space explorer and patch-grid demo are v2.)
 5. **Plan 4 — Launch & hardening** ([plan](plans/2026-10-01-plan-4-cutover-and-hardening.md)): security headers, content proofread, first deploy to the new Firebase project, test matrix from 3.6, Lighthouse/a11y pass, reduced-motion pass, fixes, then updating links everywhere.
 
 ---
@@ -265,7 +265,7 @@ All content lives in **one typed data file** (`content/profile.ts` or `.json` wi
 
 Decided (2026-10-01):
 
-- **Stack**: Astro + React islands + Tailwind.
+- **Stack**: Astro + Preact islands + Tailwind. (Changed from React on 2026-10-02: React + ReactDOM alone is ~60 KB gzipped, over the 50 KB hero budget in section 6; Preact keeps the same component model at ~5 KB.)
 - **Theme**: dark-first with a light "paper/scan" mode toggle.
 - **Phase 0**: done on the current site:
   - `firebase.json`: replaced the 1-year `immutable` rule with `no-cache` on all paths. Firebase revalidates with ETags, so unchanged files return a cheap 304 and every deploy is picked up immediately.
