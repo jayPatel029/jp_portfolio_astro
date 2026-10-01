@@ -98,7 +98,9 @@ import { profile } from '../../content/profile';
   });
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') setMenuOpen(false);
+    if (event.key !== 'Escape' || menuButton?.getAttribute('aria-expanded') !== 'true') return;
+    setMenuOpen(false);
+    menuButton.focus();
   });
 
   window.matchMedia('(min-width: 48rem)').addEventListener('change', (event) => {

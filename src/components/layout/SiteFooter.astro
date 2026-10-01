@@ -11,6 +11,6 @@ const lastUpdated = builtAt.toLocaleDateString('en-GB', { month: 'short', year: 
   <Container class="flex flex-col gap-4 font-mono text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
     <p>© {year} {profile.name}</p>
     <p>Built with Astro · Last updated {lastUpdated}</p>
-    <a href="#top" class="transition-colors hover:text-accent">Back to top ↑</a>
+    <a href="#top" class="transition-colors hover:text-accent">Back to top <span aria-hidden="true">↑</span></a>
   </Container>
 </footer>
