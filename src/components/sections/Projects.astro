@@ -2,12 +2,39 @@
 import Section from '../layout/Section.astro';
 import ExternalLink from '../ui/ExternalLink.astro';
 import ProjectVisual from '../visuals/ProjectVisual.astro';
+import type { ProjectCluster } from '../../content/types';
 import { clusterLabels, profile } from '../../content/profile';
 import { detectionScore } from '../../lib/seeded';
+
+const clusters = Object.keys(clusterLabels) as ProjectCluster[];
+const filters = [
+  { value: 'all', label: 'All', count: profile.projects.length },
+  ...clusters.map((cluster) => ({
+    value: cluster,
+    label: clusterLabels[cluster],
+    count: profile.projects.filter((project) => project.cluster === cluster).length,
+  })),
+].filter((filter) => filter.count > 0);
 ---
 
 <Section id="projects" label="case studies" title="Projects">
-  <ul class="grid gap-8 md:grid-cols-2">
+  <div data-project-filters hidden role="group" aria-label="Filter projects by area" class="mb-10 flex flex-wrap gap-2">
+    {
+      filters.map((filter) => (
+        <button
+          type="button"
+          data-filter={filter.value}
+          aria-pressed={filter.value === 'all' ? 'true' : 'false'}
+          class="min-h-10 rounded border border-line px-3 py-2 font-mono text-xs uppercase tracking-wider text-muted transition-colors hover:border-accent hover:text-fg aria-pressed:border-accent aria-pressed:text-accent"
+        >
+          {filter.label} <span class="opacity-60">{filter.count}</span>
+        </button>
+      ))
+    }
+  </div>
+  <p data-filter-status role="status" aria-live="polite" class="sr-only"></p>
+
+  <ul data-project-list class="grid gap-8 md:grid-cols-2">
     {
       profile.projects.map((project) => (
         <li
@@ -50,3 +77,32 @@ import { detectionScore } from '../../lib/seeded';
     }
   </ul>
 </Section>
+
+<script>
+  function initProjectFilters(filterGroup: HTMLElement) {
+    const buttons = [...filterGroup.querySelectorAll<HTMLButtonElement>('[data-filter]')];
+    const cards = [...document.querySelectorAll<HTMLElement>('[data-project-list] > [data-cluster]')];
+    const status = document.querySelector<HTMLElement>('[data-filter-status]');
+
+    const applyFilter = (value: string) => {
+      let visibleCount = 0;
+      for (const card of cards) {
+        const matches = value === 'all' || card.dataset.cluster === value;
+        card.hidden = !matches;
+        if (matches) visibleCount += 1;
+      }
+      for (const button of buttons) {
+        button.setAttribute('aria-pressed', String(button.dataset.filter === value));
+      }
+      if (status) status.textContent = `Showing ${visibleCount} project${visibleCount === 1 ? '' : 's'}.`;
+    };
+
+    for (const button of buttons) {
+      button.addEventListener('click', () => applyFilter(button.dataset.filter ?? 'all'));
+    }
+    filterGroup.hidden = false;
+  }
+
+  const filterGroup = document.querySelector<HTMLElement>('[data-project-filters]');
+  if (filterGroup) initProjectFilters(filterGroup);
+</script>
