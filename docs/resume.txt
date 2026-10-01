@@ -1,0 +1,55 @@
+JAY PATEL
+ +917558380404 # jaysunilpatel2002@gmail.com ï Jay Patel § jayPatel029  Portfolio
+PROFILE
+AI/ML Engineer with hands-on experience in computer vision, document intelligence, VLMs, and production
+inference systems. Skilled in Python, deep learning, image retrieval, OCR pipelines, LLM/VLM integration, and
+model optimization for resource-constrained environments.
+EDUCATION
+MIT Academy Of Engineering Dec 2021 – July 2025
+Bachelor of Technology in Computer Engineering (CGPA – 7.4) Pune, Maharashtra
+TECHNICAL SKILLS
+Languages: Python, Java Computer Vision: OpenCV, YOLO, DINOv2, OpenVINO, PaddleOCR,
+MobileNetV2 ML & Deep Learning: TensorFlow, Keras, ONNX, XGBoost, Model Quantization LLM &
+VLM: Qwen2.5-VL, Local VLM Inference, Pydantic-AI, Prompt Engineering Inference & Systems:
+Transformers, BitsAndBytes, Batched Inference, Multithreading, Parallel Processing Backend: Node.js, REST
+APIs, JWT Authentication Data & Infrastructure: BeautifulSoup, Dataset Generation, OCR Pipelines,
+MySQL, MariaDB, AWS S3, Git
+EXPERIENCE
+Software Engineer (AI/ML) Aug 2025 – Present
+Atomic Loops, Pune
+• Built a production-grade document intelligence pipeline using PaddleOCR and Qwen2.5-VL 7B, combining
+image preprocessing, raw OCR extraction, and prompts to transform invoices and manufacturing documents into
+structured JSON.
+• Optimized Qwen2.5-VL for constrained GPU environments using 4-bit quantization with BitsAndBytes and
+Transformers, enabling local VLM inference within approximately 6 GB of GPU memory on a 10 GB GPU.
+• Developed a fine-grained image similarity search system using DINOv2 embeddings to identify industrial objects
+and tools with subtle visual differences in shape, component count, and spatial configuration.
+• Improved fine-grained retrieval by using patch-level embeddings instead of a single CLS-token representation,
+preserving localized visual features and improving top-match retrieval for visually similar objects.
+• Built a Python-based image inference service handling image preprocessing, model inference, and result storage,
+using ONNX batched inference and thread pools to process multiple images concurrently.
+• Trained and deployed YOLO models for real-time tool detection and counting, optimizing models for accuracy and
+low-latency inference.
+• Designed agentic AI pipelines using LLMs and Pydantic-AI for structured outputs, response validation, and
+multi-step AI workflows.
+Full Stack Developer Intern Oct 2024 – July 2025
+Kifayti Health, Bangalore (Remote - Holistic care for chronic conditions)
+• Built and optimized backend systems using Node.js + MariaDB, implementing REST APIs and JWT
+authentication.
+• Integrated Fitbit (OAuth 2.0) and Google Health SDK for real-time health data synchronization.
+• Developed automation features using WorkManager and Firebase Cloud Messaging (FCM) for alerts and
+notifications.
+• Deployed backend services on a VPS and integrated AWS S3 for secure storage.
+MAJOR PROJECTS
+Multi-Modal Emotion Recognition System | Python, TensorFlow, Keras, OpenCV Link
+• Developed an offline multi-modal system using FER and RAVDEES datasets to classify user emotions from facial
+and speech inputs.
+• Combined CNNs and LSTMs with decision-level fusion to improve classification accuracy across modalities.
+QR Code Counterfeit Detection | TensorFlow, Keras, OpenCV Link
+• Achieved 94%+ accuracy in QR forgery detection using MobileNetV2-based CNN model.
+• Benchmarked against HOG/LBP/ORB methods with XGBoost.
+AI-Powered Onboarding Automation System | Flutter, Django, OCR Link
+• Automated document parsing and form-filling using OCR and Regex, cutting HR effort by over 60%.
+• Developed scalable full-stack platform with Flutter frontend and Django backend.
+ACHIEVEMENTS
+Amazon ML Hackathon – Developed ML pipeline for entity extraction (OCR + NLP)
