@@ -1,0 +1,47 @@
+---
+import Section from '../layout/Section.astro';
+import { profile } from '../../content/profile';
+
+const { education } = profile;
+---
+
+<Section id="experience" label="training stages" title="Work">
+  <ol class="space-y-14 border-l border-line pl-6 sm:pl-10">
+    {
+      profile.experience.map((job) => (
+        <li class="relative">
+          <span
+            aria-hidden="true"
+            class="absolute top-2 -left-[calc(1.5rem+5px)] h-2.5 w-2.5 rotate-45 bg-accent sm:-left-[calc(2.5rem+5px)]"
+          />
+          <p class="font-mono text-xs uppercase tracking-[0.2em] text-accent">{job.stage}</p>
+          <h3 class="mt-2 text-xl font-semibold sm:text-2xl">{job.role}</h3>
+          <p class="mt-1 text-muted">
+            {job.company}
+            {job.location && <span> · {job.location}</span>}
+          </p>
+          <p class="mt-1 font-mono text-sm text-muted">
+            {job.start} – {job.end ?? 'Present'}
+          </p>
+          <ul class="mt-5 max-w-3xl list-disc space-y-2 pl-5 leading-relaxed text-muted marker:text-accent">
+            {job.highlights.map((highlight) => (
+              <li>{highlight}</li>
+            ))}
+          </ul>
+        </li>
+      ))
+    }
+    <li class="relative">
+      <span
+        aria-hidden="true"
+        class="absolute top-2 -left-[calc(1.5rem+5px)] h-2.5 w-2.5 rotate-45 border border-accent bg-bg sm:-left-[calc(2.5rem+5px)]"
+      ></span>
+      <p class="font-mono text-xs uppercase tracking-[0.2em] text-accent">pretraining</p>
+      <h3 class="mt-2 text-xl font-semibold sm:text-2xl">{education.degree}</h3>
+      <p class="mt-1 text-muted">{education.school} · {education.location}</p>
+      <p class="mt-1 font-mono text-sm text-muted">
+        {education.start} – {education.end} · {education.grade}
+      </p>
+    </li>
+  </ol>
+</Section>
