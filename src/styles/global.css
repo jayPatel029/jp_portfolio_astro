@@ -155,15 +155,21 @@
   }
 
   .detect:hover::before,
-  .detect:focus-within::before {
+  .detect:focus-within::before,
+  .detect[data-detected]::before {
     opacity: 1;
     inset: -6px;
   }
 
   .detect:hover::after,
-  .detect:focus-within::after {
+  .detect:focus-within::after,
+  .detect[data-detected]::after {
     opacity: 1;
     transform: none;
+  }
+
+  [data-intro="pending"] [data-pipeline-body] {
+    visibility: hidden;
   }
 
   [data-theme="dark"] .theme-icon-moon,
