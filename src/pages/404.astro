@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/layout/Container.astro';
+---
+
+<BaseLayout title="Page not found — Jay Patel">
+  <main id="main" tabindex="-1" class="outline-none">
+    <Container class="flex min-h-dvh flex-col justify-center py-20">
+      <p class="font-mono text-xs uppercase tracking-[0.2em] text-accent">// 404 · no detections</p>
+      <h1 class="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">This page doesn't exist.</h1>
+      <p class="mt-4 max-w-xl text-muted">The link may be outdated. Everything lives on the home page.</p>
+      <div class="mt-10">
+        <a href="/" class="btn-primary">Back to home</a>
+      </div>
+    </Container>
+  </main>
+</BaseLayout>

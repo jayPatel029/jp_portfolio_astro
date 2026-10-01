@@ -1,12 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from '../components/layout/SiteHeader.astro';
+import SiteFooter from '../components/layout/SiteFooter.astro';
 import Hero from '../components/sections/Hero.astro';
 import Impact from '../components/sections/Impact.astro';
 import About from '../components/sections/About.astro';
 import Experience from '../components/sections/Experience.astro';
 import Projects from '../components/sections/Projects.astro';
 import MoreWork from '../components/sections/MoreWork.astro';
+import Contact from '../components/sections/Contact.astro';
 ---
 
 <BaseLayout>
@@ -18,5 +20,7 @@ import MoreWork from '../components/sections/MoreWork.astro';
     <Experience />
     <Projects />
     <MoreWork />
+    <Contact />
   </main>
+  <SiteFooter />
 </BaseLayout>

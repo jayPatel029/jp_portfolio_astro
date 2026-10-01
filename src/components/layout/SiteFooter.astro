@@ -1,0 +1,16 @@
+---
+import Container from './Container.astro';
+import { profile } from '../../content/profile';
+
+const builtAt = new Date();
+const year = builtAt.getFullYear();
+const lastUpdated = builtAt.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
+---
+
+<footer class="border-t border-line py-10">
+  <Container class="flex flex-col gap-4 font-mono text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+    <p>© {year} {profile.name}</p>
+    <p>Built with Astro · Last updated {lastUpdated}</p>
+    <a href="#top" class="transition-colors hover:text-accent">Back to top ↑</a>
+  </Container>
+</footer>
