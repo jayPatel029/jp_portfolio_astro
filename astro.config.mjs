@@ -8,5 +8,7 @@ export default defineConfig({
   integrations: [sitemap({ filter: (page) => !/\/404\/?$/.test(page) })],
   vite: {
     plugins: [tailwindcss()],
+    ssr: { external: ['@resvg/resvg-js'] },
+    optimizeDeps: { exclude: ['@resvg/resvg-js'] },
   },
 });
