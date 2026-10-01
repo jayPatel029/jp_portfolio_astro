@@ -1,0 +1,42 @@
+---
+import Section from '../layout/Section.astro';
+import ExternalLink from '../ui/ExternalLink.astro';
+import { profile } from '../../content/profile';
+---
+
+<Section id="more-work" label="more work" title="More work">
+  <ul class="divide-y divide-line border-y border-line">
+    {
+      profile.archive.map((item) => (
+        <li>
+          <ExternalLink
+            href={item.href}
+            class="group grid gap-2 py-5 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-10"
+          >
+            <span class="min-w-0">
+              <span class="block font-semibold transition-colors group-hover:text-accent">
+                {item.title} <span aria-hidden="true">↗</span>
+              </span>
+              <span class="mt-1 block text-sm leading-relaxed text-muted">{item.description}</span>
+            </span>
+            <span class="font-mono text-xs text-muted">{item.stack.join(' · ')}</span>
+          </ExternalLink>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h3 class="mt-14 font-mono text-xs uppercase tracking-[0.2em] text-muted">
+    <span class="text-accent">//</span> achievements
+  </h3>
+  <ul class="mt-4 space-y-4">
+    {
+      profile.achievements.map((achievement) => (
+        <li class="border-l-2 border-accent pl-4">
+          <p class="font-semibold">{achievement.title}</p>
+          <p class="mt-1 text-sm text-muted">{achievement.description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</Section>
