@@ -256,7 +256,7 @@ All content lives in **one typed data file** (`content/profile.ts` or `.json` wi
 1. **Phase 0 — Safety fixes on the current live site** (small, independent): revert/fix the `firebase.json` caching rules (C1), fix the Formspree header (C2), and add `http` to dependencies (C3). Worth doing even if the redesign takes weeks.
 2. **Plan 1 — Foundation & core sections** ([plan](plans/2026-10-01-plan-1-foundation-and-core-sections.md)): scaffold, design tokens, typed content from the resume, layout, header/nav/theme toggle, and all sections in clean form (Hero, Impact, About, Work, Projects, More work, Contact, Footer, 404), plus base SEO meta and Firebase config.
 3. **Plan 2 — Signature layer** ([plan](plans/2026-10-01-plan-2-signature-layer.md)): detection-box hover/focus motif, generated project visuals, project cluster filter tabs, Formspree contact form, OG share image, sitemap.
-4. **Plan 3 — Hero inference-pipeline animation** ([plan](plans/2026-10-02-plan-3-hero-pipeline.md)): Preact island; the static hero from Plan 1 is the reduced-motion fallback. (The embedding-space explorer and patch-grid demo are v2.)
+4. **Plan 3 — Hero inference-pipeline animation** ([plan](plans/2026-10-02-plan-3-hero-pipeline.md), done): Preact island; the static hero from Plan 1 is the reduced-motion fallback. (The embedding-space explorer and patch-grid demo are v2.)
 5. **Plan 4 — Launch & hardening** ([plan](plans/2026-10-01-plan-4-cutover-and-hardening.md)): security headers, content proofread, first deploy to the new Firebase project, test matrix from 3.6, Lighthouse/a11y pass, reduced-motion pass, fixes, then updating links everywhere.
 
 ---
