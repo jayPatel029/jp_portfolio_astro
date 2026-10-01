@@ -1,9 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from '../components/layout/SiteHeader.astro';
+import Hero from '../components/sections/Hero.astro';
+import Impact from '../components/sections/Impact.astro';
 ---
 
 <BaseLayout>
   <SiteHeader />
-  <main id="main" tabindex="-1" class="outline-none"></main>
+  <main id="main" tabindex="-1" class="outline-none">
+    <Hero />
+    <Impact />
+  </main>
 </BaseLayout>

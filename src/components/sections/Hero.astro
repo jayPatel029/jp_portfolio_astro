@@ -1,0 +1,25 @@
+---
+import Container from '../layout/Container.astro';
+import ExternalLink from '../ui/ExternalLink.astro';
+import { profile } from '../../content/profile';
+---
+
+<section id="top" aria-labelledby="hero-title" class="relative overflow-hidden">
+  <div aria-hidden="true" class="hero-grid pointer-events-none absolute inset-0"></div>
+  <Container class="relative flex min-h-[calc(100svh-4rem)] flex-col justify-center py-20">
+    <p class="font-mono text-sm text-muted">
+      <span class="text-accent">{profile.name}</span> · {profile.role}
+    </p>
+    <h1 id="hero-title" class="mt-6 max-w-4xl text-4xl font-semibold leading-[1.05] tracking-tight text-balance sm:text-6xl lg:text-7xl">
+      {profile.headline}
+    </h1>
+    <div class="mt-10 flex flex-wrap gap-3">
+      <ExternalLink href={profile.cvUrl} class="btn-primary">Download CV</ExternalLink>
+      <a href="#contact" class="btn-secondary">Contact</a>
+    </div>
+    <p class="mt-14 flex items-start gap-2 font-mono text-xs uppercase tracking-[0.15em] text-muted">
+      <span aria-hidden="true" class="mt-1 inline-block h-2 w-2 shrink-0 rounded-full bg-accent"></span>
+      <span>{profile.status}</span>
+    </p>
+  </Container>
+</section>

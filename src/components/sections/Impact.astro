@@ -1,0 +1,18 @@
+---
+import Section from '../layout/Section.astro';
+import { profile } from '../../content/profile';
+---
+
+<Section id="impact" label="evaluation" title="Impact">
+  <ul class="grid gap-px overflow-hidden rounded-md border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+    {
+      profile.metrics.map((metric) => (
+        <li class="flex flex-col bg-bg p-6">
+          <p class="font-mono text-4xl font-semibold tracking-tight text-accent sm:text-5xl">{metric.value}</p>
+          <p class="mt-3 text-sm leading-relaxed">{metric.label}</p>
+          <p class="mt-auto pt-6 font-mono text-xs text-muted">{metric.source}</p>
+        </li>
+      ))
+    }
+  </ul>
+</Section>
