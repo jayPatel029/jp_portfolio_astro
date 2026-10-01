@@ -1,0 +1,61 @@
+---
+import { createRandom, detectionScore } from '../../lib/seeded';
+
+interface Props {
+  seed: string;
+}
+
+const { seed } = Astro.props;
+const random = createRandom(seed);
+const headTop = 46;
+
+const tools = [0, 1, 2].map((slot) => {
+  const centerX = 62 + slot * 98;
+  const headRadius = 9 + Math.round(random() * 6);
+  const handleLength = 46 + Math.round(random() * 34);
+  return {
+    centerX,
+    headRadius,
+    handleLength,
+    score: detectionScore(`${seed}:${slot}`),
+    box: {
+      x: centerX - headRadius - 8,
+      y: headTop - headRadius - 8,
+      width: headRadius * 2 + 16,
+      height: headRadius + handleLength + 16,
+    },
+  };
+});
+---
+
+<svg viewBox="0 0 320 180" class="block h-auto w-full">
+  <line x1="16" y1="150" x2="304" y2="150" class="stroke-line" />
+  {
+    tools.map((tool) => (
+      <g>
+        <circle cx={tool.centerX} cy={headTop} r={tool.headRadius} class="fill-none stroke-muted" stroke-width="2.5" />
+        <rect
+          x={tool.centerX - 4}
+          y={headTop + tool.headRadius - 2}
+          width="8"
+          height={tool.handleLength - tool.headRadius}
+          rx="2"
+          class="fill-muted/50"
+        />
+        <rect
+          x={tool.box.x}
+          y={tool.box.y}
+          width={tool.box.width}
+          height={tool.box.height}
+          class="fill-none stroke-accent"
+          stroke-width="1.25"
+        />
+        <rect x={tool.box.x - 0.6} y={tool.box.y - 12} width="56" height="12" class="fill-accent" />
+        <text x={tool.box.x + 3} y={tool.box.y - 3} font-size="8.5" class="fill-accent-fg font-mono">
+          tool {tool.score}
+        </text>
+      </g>
+    ))
+  }
+  <text x="16" y="168" font-size="9" class="fill-muted font-mono">count: {tools.length}</text>
+</svg>

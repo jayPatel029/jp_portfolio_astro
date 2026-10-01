@@ -1,0 +1,83 @@
+---
+import { createRandom } from '../../lib/seeded';
+
+interface Props {
+  seed: string;
+}
+
+const { seed } = Astro.props;
+const random = createRandom(seed);
+const nodeWidth = 60;
+const nodeHeight = 28;
+
+const steps = ['plan', 'call_llm', 'validate', 'output'].map((label, index) => ({
+  label,
+  x: 18 + index * 76,
+  y: 66 + Math.round((random() - 0.5) * 24),
+}));
+const [, callStep, validateStep] = steps;
+const connectors = steps.slice(1).map((step, index) => ({ from: steps[index], to: step }));
+---
+
+<svg viewBox="0 0 320 180" class="block h-auto w-full">
+  {
+    connectors.map(({ from, to }) => (
+      <g>
+        <line
+          x1={from.x + nodeWidth}
+          y1={from.y + nodeHeight / 2}
+          x2={to.x}
+          y2={to.y + nodeHeight / 2}
+          class="stroke-muted"
+          stroke-width="1.5"
+        />
+        <circle cx={to.x} cy={to.y + nodeHeight / 2} r="2" class="fill-muted" />
+      </g>
+    ))
+  }
+  <path
+    d={`M${validateStep.x + nodeWidth / 2} ${validateStep.y} C ${validateStep.x + nodeWidth / 2} ${validateStep.y - 32}, ${callStep.x + nodeWidth / 2} ${callStep.y - 32}, ${callStep.x + nodeWidth / 2} ${callStep.y}`}
+    class="fill-none stroke-muted"
+    stroke-width="1"
+    stroke-dasharray="3 3"
+  />
+  <text
+    x={(validateStep.x + callStep.x) / 2 + nodeWidth / 2}
+    y={Math.min(validateStep.y, callStep.y) - 30}
+    font-size="8"
+    text-anchor="middle"
+    class="fill-muted font-mono"
+  >
+    retry
+  </text>
+  {
+    steps.map((step) => (
+      <g>
+        <rect
+          x={step.x}
+          y={step.y}
+          width={nodeWidth}
+          height={nodeHeight}
+          rx="3"
+          class={step === validateStep ? 'fill-surface stroke-accent' : 'fill-surface stroke-line'}
+          stroke-width="1.25"
+        />
+        <text
+          x={step.x + nodeWidth / 2}
+          y={step.y + 17}
+          font-size="9"
+          text-anchor="middle"
+          class={step === validateStep ? 'fill-accent font-mono' : 'fill-fg font-mono'}
+        >
+          {step.label}
+        </text>
+      </g>
+    ))
+  }
+  <path
+    d={`M${validateStep.x + 18} ${validateStep.y + 46} l5 5 l10 -10`}
+    class="fill-none stroke-accent"
+    stroke-width="2"
+  />
+  <text x={validateStep.x + 38} y={validateStep.y + 50} font-size="8" class="fill-muted font-mono">schema</text>
+</svg>

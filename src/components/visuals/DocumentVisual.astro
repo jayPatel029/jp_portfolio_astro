@@ -1,0 +1,51 @@
+---
+import { createRandom } from '../../lib/seeded';
+
+interface Props {
+  seed: string;
+}
+
+const { seed } = Astro.props;
+const random = createRandom(seed);
+
+const textLines = Array.from({ length: 9 }, (_, index) => ({
+  y: 38 + index * 13,
+  width: 44 + Math.round(random() * 60),
+}));
+const detectedLines = new Set([1, 4 + Math.floor(random() * 2), 7]);
+const jsonRows = ['"doc_type": "invoice"', '"vendor": "…"', '"line_items": [ … ]', '"total": …'];
+---
+
+<svg viewBox="0 0 320 180" class="block h-auto w-full">
+  <rect x="24" y="16" width="128" height="148" rx="3" class="fill-surface stroke-line" />
+  <rect x="36" y="25" width="42" height="6" rx="1" class="fill-muted/60" />
+  {
+    textLines.map((line, index) => (
+      <g>
+        <rect x="36" y={line.y} width={line.width} height="4" rx="1" class="fill-muted/40" />
+        {detectedLines.has(index) && (
+          <rect
+            x="32"
+            y={line.y - 4}
+            width={line.width + 8}
+            height="12"
+            class="fill-none stroke-accent"
+            stroke-width="1"
+          />
+        )}
+      </g>
+    ))
+  }
+  <path d="M160 90 h20 m-6 -5 l6 5 l-6 5" class="fill-none stroke-muted" stroke-width="1.5" />
+  <g font-size="9" class="font-mono">
+    <text x="190" y="50" class="fill-muted">{'{'}</text>
+    {
+      jsonRows.map((row, index) => (
+        <text x="198" y={66 + index * 16} class={index === 0 ? 'fill-accent' : 'fill-muted'}>
+          {row}
+        </text>
+      ))
+    }
+    <text x="190" y={66 + jsonRows.length * 16} class="fill-muted">{'}'}</text>
+  </g>
+</svg>

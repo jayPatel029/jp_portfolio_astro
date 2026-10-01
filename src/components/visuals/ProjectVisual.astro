@@ -1,0 +1,27 @@
+---
+import type { ProjectCluster } from '../../content/types';
+import AgentsVisual from './AgentsVisual.astro';
+import DocumentVisual from './DocumentVisual.astro';
+import SystemsVisual from './SystemsVisual.astro';
+import VisionVisual from './VisionVisual.astro';
+
+interface Props {
+  cluster: ProjectCluster;
+  seed: string;
+}
+
+const { cluster, seed } = Astro.props;
+
+const visualsByCluster = {
+  vision: VisionVisual,
+  'document-ai': DocumentVisual,
+  'llm-agents': AgentsVisual,
+  systems: SystemsVisual,
+} satisfies Record<ProjectCluster, unknown>;
+
+const Visual = visualsByCluster[cluster];
+---
+
+<div aria-hidden="true" class="overflow-hidden rounded border border-line bg-bg">
+  <Visual seed={seed} />
+</div>
