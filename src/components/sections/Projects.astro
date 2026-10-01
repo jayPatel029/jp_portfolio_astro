@@ -2,16 +2,19 @@
 import Section from '../layout/Section.astro';
 import ExternalLink from '../ui/ExternalLink.astro';
 import { clusterLabels, profile } from '../../content/profile';
+import { detectionScore } from '../../lib/seeded';
 ---
 
 <Section id="projects" label="case studies" title="Projects">
-  <ul class="grid gap-6 md:grid-cols-2">
+  <ul class="grid gap-8 md:grid-cols-2">
     {
       profile.projects.map((project) => (
         <li
           id={`project-${project.slug}`}
           data-cluster={project.cluster}
-          class="flex min-w-0 flex-col rounded-md border border-line bg-surface p-6 [overflow-wrap:anywhere] sm:p-8"
+          data-detect-label="case_study"
+          data-detect-score={detectionScore(project.slug)}
+          class="detect flex min-w-0 flex-col rounded-md border border-line bg-surface p-6 [overflow-wrap:anywhere] sm:p-8"
         >
           <p class="font-mono text-xs uppercase tracking-wider text-muted">
             <span class="text-accent">{clusterLabels[project.cluster]}</span> · {project.origin}
