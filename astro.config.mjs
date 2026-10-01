@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://my-portfolio-ec4b7.web.app',
+  site: 'https://jaypatel-dev-f91cb.web.app',
   integrations: [sitemap({ filter: (page) => !/\/404\/?$/.test(page) })],
   vite: {
     plugins: [tailwindcss()],

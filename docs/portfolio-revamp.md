@@ -217,8 +217,8 @@ C:\Users\jaysu\Desktop\ME\Jay-Portfolio\
 ```
 
 - This doc and `resume.txt` are copied into the new repo's `docs/` so the new project is self-contained.
-- **Same Firebase project** (`my-portfolio-ec4b7`): the new repo gets its own `firebase.json` + `.firebaserc` pointing at the same hosting site, so the public URL doesn't change. Cutover = deploying from the new repo. Rollback = redeploying from `my_portfolio` (or one click in the Firebase Hosting release history).
-- Nothing is deployed from the new repo until you approve the cutover.
+- **Separate Firebase project** (changed 2026-10-02): the new site is hosted in its own project `jaypatel-dev-f91cb` at `https://jaypatel-dev-f91cb.web.app`. The old Flutter site stays live, unchanged, on `my-portfolio-ec4b7`. Launch = deploying the new project and updating links (LinkedIn, GitHub, CV). What happens to the old URL (keep, redirect or take down) is decided later; see Plan 4's appendix.
+- Nothing is deployed from the new repo until you approve it.
 
 ## 5. Content Architecture
 
@@ -257,7 +257,7 @@ All content lives in **one typed data file** (`content/profile.ts` or `.json` wi
 2. **Plan 1 — Foundation & core sections** ([plan](plans/2026-10-01-plan-1-foundation-and-core-sections.md)): scaffold, design tokens, typed content from the resume, layout, header/nav/theme toggle, and all sections in clean form (Hero, Impact, About, Work, Projects, More work, Contact, Footer, 404), plus base SEO meta and Firebase config.
 3. **Plan 2 — Signature layer** ([plan](plans/2026-10-01-plan-2-signature-layer.md)): detection-box hover/focus motif, generated project visuals, project cluster filter tabs, Formspree contact form, OG share image, sitemap.
 4. **Plan 3 — Hero inference-pipeline animation**: React island; the static hero from Plan 1 is the reduced-motion fallback. (The embedding-space explorer and patch-grid demo are v2.)
-5. **Plan 4 — Cutover & hardening**: deploy from this repo to Firebase, test matrix from 3.6, Lighthouse/a11y pass, reduced-motion pass, final content proofread.
+5. **Plan 4 — Launch & hardening** ([plan](plans/2026-10-01-plan-4-cutover-and-hardening.md)): security headers, content proofread, first deploy to the new Firebase project, test matrix from 3.6, Lighthouse/a11y pass, reduced-motion pass, fixes, then updating links everywhere.
 
 ---
 
@@ -276,6 +276,9 @@ Decided (2026-10-01):
 
 - **Content inputs**: answered; see section 7.
 
+- **Hosting** (2026-10-02): new Firebase project `jaypatel-dev-f91cb` instead of reusing `my-portfolio-ec4b7`; see section 4.1.
+
 Still open:
 
 1. Project visuals, if you find any (not blocking: generated visuals are the fallback).
+2. The old URL `my-portfolio-ec4b7.web.app`: keep the Flutter site, redirect to the new site, or take it down (options in Plan 4's appendix).

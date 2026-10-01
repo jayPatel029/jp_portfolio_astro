@@ -19,7 +19,7 @@ The site URL is set once in `astro.config.mjs` (`site`).
 
 ## Deploying
 
-Hosting is Firebase (`my-portfolio-ec4b7`, same project as the old Flutter site):
+Hosting is Firebase project `jaypatel-dev-f91cb` (https://jaypatel-dev-f91cb.web.app), separate from the old Flutter site's project:
 
     npm run build
     firebase deploy --only hosting
