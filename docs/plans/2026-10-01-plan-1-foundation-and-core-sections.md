@@ -14,7 +14,7 @@
 
 - Project root: `C:\Users\jaysu\Desktop\ME\Jay-Portfolio\portfolio_astro` (separate git repo, branch `main`).
 - Node ≥ 22.12 (installed: 22.14.0). npm 11.
-- Astro 6.x. Tailwind v4 through `@tailwindcss/vite`. **Do not** use the deprecated `@astrojs/tailwind` integration.
+- Astro 7.x (npm `latest` at install time resolved to 7.3.5; the plan was drafted against 6.x and uses only APIs common to both). Tailwind v4 through `@tailwindcss/vite`. **Do not** use the deprecated `@astrojs/tailwind` integration.
 - No React or other UI framework in this plan; it arrives in Plan 3 with the hero animation.
 - **No phone number anywhere**: not in pages, meta tags or JSON-LD.
 - Atomic Loops content = only what is in `docs/resume.txt`. No client names, screenshots or sample documents.
