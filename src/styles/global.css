@@ -9,6 +9,7 @@
   --muted: #9aa3ad;
   --accent: #ff7a1a;
   --accent-fg: #0b0d0f;
+  --danger: #ff6b6b;
   color-scheme: dark;
 }
 
@@ -20,6 +21,7 @@
   --muted: #5b6168;
   --accent: #b54708;
   --accent-fg: #ffffff;
+  --danger: #b42318;
   color-scheme: light;
 }
 
@@ -31,6 +33,7 @@
   --color-muted: var(--muted);
   --color-accent: var(--accent);
   --color-accent-fg: var(--accent-fg);
+  --color-danger: var(--danger);
 }
 
 @theme {
