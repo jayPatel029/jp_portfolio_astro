@@ -257,7 +257,7 @@ All content lives in **one typed data file** (`content/profile.ts` or `.json` wi
 2. **Plan 1 — Foundation & core sections** ([plan](plans/2026-10-01-plan-1-foundation-and-core-sections.md)): scaffold, design tokens, typed content from the resume, layout, header/nav/theme toggle, and all sections in clean form (Hero, Impact, About, Work, Projects, More work, Contact, Footer, 404), plus base SEO meta and Firebase config.
 3. **Plan 2 — Signature layer** ([plan](plans/2026-10-01-plan-2-signature-layer.md)): detection-box hover/focus motif, generated project visuals, project cluster filter tabs, Formspree contact form, OG share image, sitemap.
 4. **Plan 3 — Hero inference-pipeline animation** ([plan](plans/2026-10-02-plan-3-hero-pipeline.md), done): Preact island; the static hero from Plan 1 is the reduced-motion fallback. (The embedding-space explorer and patch-grid demo are v2.)
-5. **Plan 4 — Launch & hardening** ([plan](plans/2026-10-01-plan-4-cutover-and-hardening.md)): security headers, content proofread, first deploy to the new Firebase project, test matrix from 3.6, Lighthouse/a11y pass, reduced-motion pass, fixes, then updating links everywhere.
+5. **Plan 4 — Launch & hardening** ([plan](plans/2026-10-01-plan-4-cutover-and-hardening.md), live since 2026-10-02): security headers, content proofread, first deploy to the new Firebase project, test matrix from 3.6, Lighthouse/a11y pass, reduced-motion pass, fixes, then updating links everywhere.
 
 ---
 
@@ -277,6 +277,8 @@ Decided (2026-10-01):
 - **Content inputs**: answered; see section 7.
 
 - **Hosting** (2026-10-02): new Firebase project `jaypatel-dev-f91cb` instead of reusing `my-portfolio-ec4b7`; see section 4.1.
+
+- **Launch**: the Astro site went live on 2026-10-02 at https://jaypatel-dev-f91cb.web.app (deployed from `portfolio_astro` `main`).
 
 Still open:
 
