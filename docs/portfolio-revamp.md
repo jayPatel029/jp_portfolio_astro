@@ -241,7 +241,7 @@ All content lives in **one typed data file** (`content/profile.ts` or `.json` wi
 
 1. **CV**: new link (updated 2026-10-20): `https://drive.google.com/file/d/1kkeV_QpuJybhdM27z8ZqLrQCfuqkcjmH/view?usp=sharing`. The Drive file must stay shared as "Anyone with the link → Viewer", or recruiters will hit a Google sign-in page.
 2. **Project visuals**: pending; you're checking what you have. Until then, each project gets a generated visual instead of a screenshot, drawn in the site's own style: OCR boxes over a mock document, a retrieval result grid, detection boxes over tool silhouettes, a confusion-matrix tile and so on. No placeholder-image services.
-3. **Atomic Loops**: show exactly what the resume says (company name, role, dates, the 7 bullets, the ~6 GB / 10 GB GPU numbers). No screenshots, client names or sample documents. Any invoice/document shown in the hero animation is fictional.
+3. **Atomic Loops**: company, role, dates, and the ~6 GB / 10 GB GPU numbers stay as the resume. From Plan 5, the seven resume bullets are no longer pasted into both Work and Projects; the three flagship case studies use the 2026-10-20 interview. No screenshots, client names or sample documents. Any invoice/document shown on the site is fictional.
 4. **Links**: keep as they are (including the Drive link for Emotion Recognition).
 5. **Photo / domain / phone**: no photo (typographic identity, "JP" monogram), stay on the Firebase URL (canonical/OG URLs come from one config value so a domain can be added later), and **no phone number anywhere** on the site, in meta tags or in structured data. Email + LinkedIn + GitHub only.
 6. **Old content**:
@@ -258,6 +258,7 @@ All content lives in **one typed data file** (`content/profile.ts` or `.json` wi
 3. **Plan 2 — Signature layer** ([plan](plans/2026-10-01-plan-2-signature-layer.md)): detection-box hover/focus motif, generated project visuals, project cluster filter tabs, Formspree contact form, OG share image, sitemap.
 4. **Plan 3 — Hero inference-pipeline animation** ([plan](plans/2026-10-02-plan-3-hero-pipeline.md), done): Preact island; the static hero from Plan 1 is the reduced-motion fallback. (The embedding-space explorer and patch-grid demo are v2.)
 5. **Plan 4 — Launch & hardening** ([plan](plans/2026-10-01-plan-4-cutover-and-hardening.md), live since 2026-10-02): security headers, content proofread, first deploy to the new Firebase project, test matrix from 3.6, Lighthouse/a11y pass, reduced-motion pass, fixes, then updating links everywhere.
+6. **Plan 5 — Depth & positioning** ([design](2026-10-20-depth-and-positioning.md), [plan](plans/2026-10-20-plan-5-depth-and-positioning.md)): rewrite the live site so it is not a resume clone and not OCR-first. Three flagship case studies from the 2026-10-20 interview, rebalanced metrics, Work no longer duplicates Projects.
 
 ---
 
@@ -279,6 +280,8 @@ Decided (2026-10-01):
 - **Hosting** (2026-10-02): new Firebase project `jaypatel-dev-f91cb` instead of reusing `my-portfolio-ec4b7`; see section 4.1.
 
 - **Launch**: the Astro site went live on 2026-10-02 at https://jaypatel-dev-f91cb.web.app (deployed from `portfolio_astro` `main`).
+
+- **Plan 5 positioning** (2026-10-20): applied AI engineer, breadth-first. Interview-driven case studies. Synthetic visuals only. Keep ~6 GB to match the resume. Retrieval “needs review” rate after patch rerank is ~5–10% (~90% resolve without review). See [design](2026-10-20-depth-and-positioning.md). This overrides section 7’s “Atomic Loops: show exactly what the resume says” for the three flagships.
 
 Still open:
 
