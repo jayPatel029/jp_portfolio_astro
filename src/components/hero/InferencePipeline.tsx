@@ -20,9 +20,9 @@ const FADE_MS = 150;
 const HEADLINE_FLASH_MS = 1600;
 
 const STAGES = [
-  { label: 'preprocess', start: 0 },
-  { label: 'ocr', start: OCR_START },
-  { label: 'extract', start: EXTRACT_START },
+  { label: 'ingest', start: 0 },
+  { label: 'extract', start: OCR_START },
+  { label: 'ground', start: EXTRACT_START },
   { label: 'render', start: RENDER_START },
 ];
 
@@ -111,7 +111,7 @@ export default function InferencePipeline({ fields }: Props) {
 
   return (
     <figure
-      aria-label="Animated illustration: a scanned document goes through OCR and VLM extraction into structured JSON."
+      aria-label="Animated illustration: a scanned page is ingested, extracted, grounded against source text, and rendered as structured JSON."
       class="min-w-0 rounded-md border border-line bg-surface"
     >
       <div class="flex items-center justify-between gap-3 border-b border-line px-4 py-2.5 font-mono text-xs text-muted">
