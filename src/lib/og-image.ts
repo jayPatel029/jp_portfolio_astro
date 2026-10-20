@@ -73,7 +73,7 @@ function buildTree(): OgElement {
           },
           `ai_ml_engineer ${detectionScore('og-image')}`,
         ),
-        div({ fontSize: 60, fontWeight: 600, lineHeight: 1.1, letterSpacing: -1 }, profile.headline),
+        div({ fontSize: 44, fontWeight: 600, lineHeight: 1.1, letterSpacing: -1 }, profile.headline),
       ]),
       div(
         {

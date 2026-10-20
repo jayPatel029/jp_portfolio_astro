@@ -24,9 +24,17 @@ const { education } = profile;
             {job.start} – {job.end ?? 'Present'}
           </p>
           <ul class="mt-5 max-w-3xl list-disc space-y-2 pl-5 leading-relaxed text-muted marker:text-accent">
-            {job.highlights.map((highlight) => (
-              <li>{highlight}</li>
-            ))}
+            {job.highlights.map((highlight) =>
+              typeof highlight === 'string' ? (
+                <li>{highlight}</li>
+              ) : (
+                <li>
+                  <a href={highlight.href} class="underline-offset-4 hover:text-fg hover:underline">
+                    {highlight.text}
+                  </a>
+                </li>
+              ),
+            )}
           </ul>
         </li>
       ))

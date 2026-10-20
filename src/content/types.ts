@@ -19,6 +19,8 @@ export interface SkillGroup {
   items: string[];
 }
 
+export type ExperienceHighlight = string | { text: string; href: string };
+
 export interface Experience {
   role: string;
   company: string;
@@ -28,7 +30,7 @@ export interface Experience {
   end: string | null;
   /** Model-card framing label shown above the role, e.g. "production". */
   stage: string;
-  highlights: string[];
+  highlights: ExperienceHighlight[];
 }
 
 export interface Metric {
@@ -46,6 +48,10 @@ export interface Project {
   highlights: string[];
   stack: string[];
   links: ExternalLinkItem[];
+  featured?: boolean;
+  problem?: string;
+  decision?: string;
+  result?: string;
 }
 
 export interface ArchiveItem {
@@ -65,7 +71,7 @@ export interface Profile {
   initials: string;
   role: string;
   headline: string;
-  summary: string;
+  summary: string[];
   location: string;
   status: string;
   email: string;
