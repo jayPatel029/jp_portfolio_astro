@@ -17,7 +17,7 @@ export const profile: Profile = {
   location: 'Pune, Maharashtra, India',
   status: 'Software Engineer (AI/ML) at Atomic Loops, Pune',
   email: 'jaysunilpatel2002@gmail.com',
-  cvUrl: 'https://drive.google.com/file/d/1FPes37W_uQVm1JhnTfYBQP0lj1Au74JE/view?usp=sharing',
+  cvUrl: 'https://drive.google.com/file/d/1kkeV_QpuJybhdM27z8ZqLrQCfuqkcjmH/view?usp=sharing',
   socials: [
     { label: 'GitHub', href: 'https://github.com/jayPatel029' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jay-patel-7aa2a3253/' },
@@ -28,7 +28,7 @@ export const profile: Profile = {
     location: 'Pune, Maharashtra',
     start: 'Dec 2021',
     end: 'Jul 2025',
-    grade: 'CGPA 7.4',
+    grade: 'CGPA 7.57',
   },
   skills: [
     { layer: 'Languages', items: ['Python', 'Java'] },

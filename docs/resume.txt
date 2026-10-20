@@ -6,7 +6,7 @@ inference systems. Skilled in Python, deep learning, image retrieval, OCR pipeli
 model optimization for resource-constrained environments.
 EDUCATION
 MIT Academy Of Engineering Dec 2021 – July 2025
-Bachelor of Technology in Computer Engineering (CGPA – 7.4) Pune, Maharashtra
+Bachelor of Technology in Computer Engineering (CGPA – 7.57) Pune, Maharashtra
 TECHNICAL SKILLS
 Languages: Python, Java Computer Vision: OpenCV, YOLO, DINOv2, OpenVINO, PaddleOCR,
 MobileNetV2 ML & Deep Learning: TensorFlow, Keras, ONNX, XGBoost, Model Quantization LLM &

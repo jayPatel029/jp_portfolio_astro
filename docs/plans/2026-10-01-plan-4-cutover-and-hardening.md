@@ -273,7 +273,7 @@ git checkout main && npm run build && firebase deploy --only hosting
 - [ ] **Step 2 (👤): Point everything at the new URL** `https://jaypatel-dev-f91cb.web.app`:
   - LinkedIn: Contact info → Website, plus the Featured section if it links the old site.
   - GitHub: profile "Website" field, profile README if it has one, and the **About → Website** field of `jayPatel029/jp_portfolio_astro`.
-  - The CV on Google Drive (`1FPes37W…`, replaced `1TQmPepx…` on 2026-10-02): replace the portfolio link in the document. Edit the existing file so the share link stays the same.
+  - The CV on Google Drive (`1kkeV_Qpu…`, replaced `1FPes37W…` on 2026-10-20): replace the portfolio link in the document. Edit the existing file so the share link stays the same.
   - Anywhere else the old URL appears (email signature, job portals).
 - [ ] **Step 3 (👤): Post-launch checks**
   - Refresh LinkedIn's cached link preview with [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/).

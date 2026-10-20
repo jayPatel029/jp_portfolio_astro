@@ -239,7 +239,7 @@ All content lives in **one typed data file** (`content/profile.ts` or `.json` wi
 
 ## 7. Content Inputs (answered 2026-10-01)
 
-1. **CV**: new link (updated 2026-10-02): `https://drive.google.com/file/d/1FPes37W_uQVm1JhnTfYBQP0lj1Au74JE/view?usp=sharing`. The Drive file must stay shared as "Anyone with the link → Viewer", or recruiters will hit a Google sign-in page.
+1. **CV**: new link (updated 2026-10-20): `https://drive.google.com/file/d/1kkeV_QpuJybhdM27z8ZqLrQCfuqkcjmH/view?usp=sharing`. The Drive file must stay shared as "Anyone with the link → Viewer", or recruiters will hit a Google sign-in page.
 2. **Project visuals**: pending; you're checking what you have. Until then, each project gets a generated visual instead of a screenshot, drawn in the site's own style: OCR boxes over a mock document, a retrieval result grid, detection boxes over tool silhouettes, a confusion-matrix tile and so on. No placeholder-image services.
 3. **Atomic Loops**: show exactly what the resume says (company name, role, dates, the 7 bullets, the ~6 GB / 10 GB GPU numbers). No screenshots, client names or sample documents. Any invoice/document shown in the hero animation is fictional.
 4. **Links**: keep as they are (including the Drive link for Emotion Recognition).
