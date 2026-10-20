@@ -1,0 +1,36 @@
+---
+interface Props {
+  seed: string;
+}
+
+const { seed: _seed } = Astro.props;
+---
+
+<svg viewBox="0 0 320 180" class="block h-auto w-full">
+  <text x="16" y="18" font-size="9" class="fill-muted font-mono">train</text>
+  <rect x="16" y="28" width="136" height="136" rx="3" class="fill-surface stroke-line"></rect>
+  <circle cx="48" cy="70" r="8" class="fill-none stroke-muted" stroke-width="2"></circle>
+  <rect x="44" y="76" width="8" height="28" class="fill-muted/50"></rect>
+  <rect x="36" y="52" width="24" height="60" class="fill-none stroke-accent"></rect>
+  <circle cx="88" cy="70" r="8" class="fill-none stroke-muted" stroke-width="2"></circle>
+  <rect x="84" y="76" width="8" height="28" class="fill-muted/50"></rect>
+  <rect x="76" y="52" width="24" height="60" class="fill-none stroke-accent"></rect>
+  <circle cx="128" cy="70" r="8" class="fill-none stroke-muted" stroke-width="2"></circle>
+  <rect x="124" y="76" width="8" height="28" class="fill-muted/50"></rect>
+  <rect x="116" y="52" width="24" height="60" class="fill-none stroke-accent"></rect>
+  <text x="24" y="150" font-size="8" class="fill-muted font-mono">count 3</text>
+
+  <text x="168" y="18" font-size="9" class="fill-muted font-mono">on the line</text>
+  <rect x="168" y="28" width="136" height="136" rx="3" class="fill-surface stroke-line"></rect>
+  <circle cx="200" cy="70" r="8" class="fill-none stroke-muted" stroke-width="2"></circle>
+  <rect x="196" y="76" width="8" height="28" class="fill-muted/50"></rect>
+  <rect x="188" y="52" width="24" height="60" class="fill-none stroke-accent"></rect>
+  <ellipse cx="240" cy="64" rx="22" ry="16" class="fill-accent/30 stroke-accent"></ellipse>
+  <circle cx="240" cy="70" r="8" class="fill-none stroke-muted/40" stroke-width="2"></circle>
+  <rect x="236" y="76" width="8" height="28" class="fill-muted/30"></rect>
+  <rect x="228" y="52" width="24" height="60" class="fill-none stroke-accent" stroke-dasharray="3 3"></rect>
+  <circle cx="280" cy="70" r="8" class="fill-none stroke-muted" stroke-width="2"></circle>
+  <rect x="276" y="76" width="8" height="28" class="fill-muted/50"></rect>
+  <rect x="268" y="52" width="24" height="60" class="fill-none stroke-accent"></rect>
+  <text x="176" y="150" font-size="8" class="fill-muted font-mono">glare miss → augment</text>
+</svg>

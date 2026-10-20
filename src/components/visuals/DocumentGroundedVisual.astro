@@ -1,0 +1,31 @@
+---
+interface Props {
+  seed: string;
+}
+
+const { seed: _seed } = Astro.props;
+---
+
+<svg viewBox="0 0 320 180" class="block h-auto w-full">
+  <rect x="16" y="16" width="128" height="148" rx="3" class="fill-surface stroke-line"></rect>
+  <text x="28" y="36" font-size="9" class="fill-muted font-mono">Northridge Tooling</text>
+  <text x="28" y="50" font-size="8" class="fill-muted font-mono">INV-1042</text>
+  <rect x="28" y="62" width="72" height="5" class="fill-muted/40"></rect>
+  <rect x="28" y="74" width="96" height="5" class="fill-muted/40"></rect>
+  <rect x="24" y="88" width="88" height="14" class="fill-none stroke-accent"></rect>
+  <text x="28" y="98" font-size="8" class="fill-accent font-mono">total 1,840.00</text>
+  <rect x="28" y="112" width="80" height="5" class="fill-muted/40"></rect>
+  <rect x="28" y="124" width="60" height="5" class="fill-muted/40"></rect>
+
+  <path d="M152 90 h20 m-6 -5 l6 5 l-6 5" class="fill-none stroke-muted" stroke-width="1.5"></path>
+
+  <g font-size="9" class="font-mono">
+    <text x="184" y="44" class="fill-muted">{'{'}</text>
+    <text x="192" y="62" class="fill-muted">"vendor": "Northridge",</text>
+    <text x="192" y="80" class="fill-accent">"total": "1840.00"</text>
+    <text x="184" y="98" class="fill-muted">{'}'}</text>
+  </g>
+  <rect x="192" y="110" width="64" height="12" class="fill-accent"></rect>
+  <text x="196" y="119" font-size="8" class="fill-accent-fg font-mono">from OCR</text>
+  <text x="184" y="148" font-size="8" class="fill-muted font-mono">not invented by the VLM</text>
+</svg>

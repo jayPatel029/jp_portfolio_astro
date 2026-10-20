@@ -1,7 +1,10 @@
 ---
 import type { ProjectCluster } from '../../content/types';
 import AgentsVisual from './AgentsVisual.astro';
+import DetectionGlareVisual from './DetectionGlareVisual.astro';
+import DocumentGroundedVisual from './DocumentGroundedVisual.astro';
 import DocumentVisual from './DocumentVisual.astro';
+import RetrievalVisual from './RetrievalVisual.astro';
 import SystemsVisual from './SystemsVisual.astro';
 import VisionVisual from './VisionVisual.astro';
 
@@ -17,9 +20,16 @@ const visualsByCluster = {
   'document-ai': DocumentVisual,
   'llm-agents': AgentsVisual,
   systems: SystemsVisual,
-} satisfies Record<ProjectCluster, unknown>;
+};
 
-const Visual = visualsByCluster[cluster];
+const Visual =
+  seed === 'fine-grained-retrieval'
+    ? RetrievalVisual
+    : seed === 'document-intelligence'
+      ? DocumentGroundedVisual
+      : seed === 'tool-detection'
+        ? DetectionGlareVisual
+        : visualsByCluster[cluster];
 ---
 
 <div aria-hidden="true" class="overflow-hidden rounded border border-line bg-bg">
