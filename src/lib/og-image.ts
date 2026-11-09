@@ -7,11 +7,11 @@ import { profile } from '../content/profile';
 import { detectionScore } from './seeded';
 
 const colors = {
-  bg: '#0b0d0f',
-  fg: '#e8eaed',
-  muted: '#9aa3ad',
-  accent: '#ff7a1a',
-  accentFg: '#0b0d0f',
+  bg: '#070b14',
+  fg: '#e8eef7',
+  muted: '#8a94a6',
+  accent: '#22d3ee',
+  accentFg: '#050c14',
 };
 
 type OgStyle = Record<string, string | number>;
